@@ -260,6 +260,11 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\CourseDesc\Create.cshtml" />
+    <Content Include="Views\CourseDesc\Delete.cshtml" />
+    <Content Include="Views\CourseDesc\Details.cshtml" />
+    <Content Include="Views\CourseDesc\Edit.cshtml" />
+    <Content Include="Views\CourseDesc\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
