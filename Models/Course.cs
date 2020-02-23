@@ -17,6 +17,6 @@ namespace MvcMovie.Models
         //we indicate that with an ICollection
         public ICollection<CourseDetail> CourseDetail { get; set; }
 
-
+        //hey
     }
 }
