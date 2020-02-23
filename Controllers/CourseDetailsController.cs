@@ -76,7 +76,7 @@ namespace MvcMovie.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.courseID = new SelectList(db.Courses, "courseID", "description", courseDetail.courseID);
+            ViewBag.courseID = new SelectList(db.Courses, "courseID", "CourseDescription", courseDetail.courseID);
             ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", courseDetail.studentID);
             return View(courseDetail);
         }
@@ -94,7 +94,7 @@ namespace MvcMovie.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.courseID = new SelectList(db.Courses, "courseID", "description", courseDetail.courseID);
+            ViewBag.courseID = new SelectList(db.Courses, "courseID", "CourseDescription", courseDetail.courseID);
             ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", courseDetail.studentID);
             return View(courseDetail);
         }
