@@ -9,11 +9,38 @@ namespace MvcMovie.Models
 {
     public class Student
     {
+        public System.Guid SID { get; set; }
+
         public int studentID { get; set; }
+        [Display (Name="First Name")] 
+        [Required(ErrorMessage = "Student First Name is Required")]
+        [StringLength(20)]
         public string firstName { get; set; }
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Student Last Name is Required")]
+        [StringLength(20)]
         public string lastName { get; set; }
+        [Display(Name = "Most used Email address")]
+        [Required]
+        [EmailAddress(ErrorMessage = "Enter you most used Email Address")]
         public string email { get; set; }
+        [Display(Name = "Mobile Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\(\d{3}\)", ErrorMessage ="Phone number must be in the format: (xxx)-xxx-xxxx or (xxx)-xxx-xxxx-xxxx")]
+
         public string phone { get; set; }
+        [StringLength(100)]
+        [Required]
+        public string LocalStreet { get; set; }
+        [StringLength(50)]
+        [Required]
+        public string LocalCity { get; set; }
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "State must be two characters")]
+        [Required]
+        public string LocalState { get; set; }
+        [Display(Name = "When did you join the University?")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime studentSince { get; set; }
 
         public ICollection<CourseDetail> CourseDetail { get; set; }

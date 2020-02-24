@@ -4,12 +4,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Show student Details</h2>
+<h2>Details</h2>
 
 <div>
     <h4>Student</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SID)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.firstName)
         </dt>
@@ -40,6 +48,30 @@
 
         <dd>
             @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalState)
         </dd>
 
         <dt>

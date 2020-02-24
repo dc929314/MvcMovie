@@ -47,7 +47,7 @@ namespace MvcMovie.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "studentID,firstName,lastName,email,phone,studentSince")] Student student)
+        public ActionResult Create([Bind(Include = "studentID,SID,firstName,lastName,email,phone,LocalStreet,LocalCity,LocalState,studentSince")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace MvcMovie.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "studentID,firstName,lastName,email,phone,studentSince")] Student student)
+        public ActionResult Edit([Bind(Include = "studentID,SID,firstName,lastName,email,phone,LocalStreet,LocalCity,LocalState,studentSince")] Student student)
         {
             if (ModelState.IsValid)
             {
