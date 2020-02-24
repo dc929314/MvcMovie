@@ -10,12 +10,12 @@ namespace MvcMovie.Models
     {
         public int courseID { get; set; }
         [Display(Name = "Course Description")]
-        [Required]
+        [Required(ErrorMessage = "Course Description is Required")]
         public string CourseDescription { get; set; }
 
         public string description { get; set; }
         [Display (Name= "Credit Hours")]
-        [Required]
+        [Required(ErrorMessage = "Credit Hours are Required")]
         public string creditHours { get; set; }
         // add any other fields as appropriate
         //Product is on the "one" side of a one-to-many relationship with OrderDetail
