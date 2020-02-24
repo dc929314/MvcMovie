@@ -18,7 +18,7 @@ namespace MvcMovie.Controllers
         // GET: CourseDetails
         public ActionResult Index()
         {
-            var courseDetails = db.CourseDetails.Include(c => c.Course).Include(c => c.Student);
+            var courseDetails = db.CourseDetails.Include(c => c.Student);
             return View(courseDetails.ToList());
         }
 
@@ -40,7 +40,6 @@ namespace MvcMovie.Controllers
         // GET: CourseDetails/Create
         public ActionResult Create()
         {
-            ViewBag.courseID = new SelectList(db.Courses, "courseID", "description");
             ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName");
             return View();
         }
@@ -59,7 +58,6 @@ namespace MvcMovie.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.courseID = new SelectList(db.Courses, "courseID", "description", courseDetail.courseID);
             ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", courseDetail.studentID);
             return View(courseDetail);
         }
@@ -76,7 +74,6 @@ namespace MvcMovie.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.courseID = new SelectList(db.Courses, "courseID", "CourseDescription", courseDetail.courseID);
             ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", courseDetail.studentID);
             return View(courseDetail);
         }
@@ -94,7 +91,6 @@ namespace MvcMovie.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.courseID = new SelectList(db.Courses, "courseID", "CourseDescription", courseDetail.courseID);
             ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", courseDetail.studentID);
             return View(courseDetail);
         }
