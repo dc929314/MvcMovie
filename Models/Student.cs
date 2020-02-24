@@ -10,7 +10,7 @@ namespace MvcMovie.Models
     public class Student
     {
         public System.Guid SID { get; set; }
-
+        
         public int studentID { get; set; }
         [Display (Name="First Name")] 
         [Required(ErrorMessage = "Student First Name is Required")]
@@ -26,7 +26,8 @@ namespace MvcMovie.Models
         public string email { get; set; }
         [Display(Name = "Mobile Phone Number")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^(\(\d{3}\)", ErrorMessage ="Phone number must be in the format: (xxx)-xxx-xxxx or (xxx)-xxx-xxxx-xxxx")]
+        [RegularExpression(@"^(\(\d{3}\) | \d{3}-)\d{3}-\d{4}$",
+            ErrorMessage ="Phone number must be in the format: (xxx)-xxx-xxxx")]
 
         public string phone { get; set; }
         [StringLength(100)]
