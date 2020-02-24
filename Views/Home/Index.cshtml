@@ -22,12 +22,24 @@
     </div>
     <div class="col-md-4">
         <h2>Tools</h2>
+
+
         <p>For this application we are using GitHub! A very helpful tool. </p>
         
     </div>
     <div class="col-md-4">
         <h2>Enjoy</h2>
         <p>We hope this website is easy to use and helpful for those who visit the site.</p>
-        
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                Select an Item
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Students", "Index", "Students")</li>
+                <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+                <li>@Html.ActionLink("CourseDetails", "Index", "CourseDetails")</li>
+            </ul>
+
+        </div>
     </div>
-</div>
