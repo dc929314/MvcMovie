@@ -30,12 +30,15 @@ namespace MvcMovie.Models
             ErrorMessage ="Phone number must be in the format: (xxx)-xxx-xxxx")]
 
         public string phone { get; set; }
+        [Display(Name = "Street")]
         [StringLength(100)]
         [Required]
         public string LocalStreet { get; set; }
+        [Display(Name = "City")]
         [StringLength(50)]
         [Required]
         public string LocalCity { get; set; }
+        [Display(Name = "State")]
         [StringLength(2, MinimumLength = 2, ErrorMessage = "State must be two characters")]
         [Required]
         public string LocalState { get; set; }
